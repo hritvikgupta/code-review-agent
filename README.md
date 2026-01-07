@@ -17,7 +17,7 @@ Create an agent that:
 - ✅ React frontend with CopilotKit chat UI
 - ⚠️ ~~Groq LLM integration~~ → **Using OpenAI instead But added the GROQ_API_KEY and GROQ_MODEL support also** (see note below)
 
-> **Note on LLM Choice:** Groq was not used because the Groq free tier was quite slow for workflow. So i just used my own OpenAI (gpt-4o) for faster inferenceing.  But
+> **Note on LLM Choice:** Groq was not used because the Groq free tier was quite slow for workflow. So i just used my own OpenAI (gpt-4o) for faster inferenceing.  But i added the GROQ_API_KEY and GROQ_MODEL support also.
 
 **What you implement:**
 
