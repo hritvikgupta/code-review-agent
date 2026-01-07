@@ -10,9 +10,17 @@ from src.code_review_agent.prompts.prompts import SUMMARIZER_AGENT_PROMPT
 def create_summarizer_agent(llm: ChatOpenAI = None):
     """Create and return the summarizer agent."""
     if llm is None:
-        llm = ChatOpenAI(
-            model=os.getenv("OPENAI_MODEL", "gpt-4o"),
-        )
+        # Use Groq if GROQ_API_KEY is set, otherwise fall back to OpenAI
+        if os.getenv("GROQ_API_KEY"):
+            llm = ChatOpenAI(
+                model=os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile"),
+                api_key=os.getenv("GROQ_API_KEY"),
+                base_url="https://api.groq.com/openai/v1",
+            )
+        else:
+            llm = ChatOpenAI(
+                model=os.getenv("OPENAI_MODEL", "gpt-4o"),
+            )
     
     # Summarizer doesn't need tools, just LLM for text summarization
     agent = create_react_agent(
@@ -21,4 +29,3 @@ def create_summarizer_agent(llm: ChatOpenAI = None):
         prompt=SUMMARIZER_AGENT_PROMPT
     )
     return agent
-

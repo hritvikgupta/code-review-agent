@@ -11,9 +11,17 @@ from src.code_review_agent.prompts.prompts import VALIDATOR_AGENT_PROMPT
 def create_validator_agent(llm: ChatOpenAI = None):
     """Create and return the validator agent."""
     if llm is None:
-        llm = ChatOpenAI(
-            model=os.getenv("OPENAI_MODEL", "gpt-4o"),
-        )
+        # Use Groq if GROQ_API_KEY is set, otherwise fall back to OpenAI
+        if os.getenv("GROQ_API_KEY"):
+            llm = ChatOpenAI(
+                model=os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile"),
+                api_key=os.getenv("GROQ_API_KEY"),
+                base_url="https://api.groq.com/openai/v1",
+            )
+        else:
+            llm = ChatOpenAI(
+                model=os.getenv("OPENAI_MODEL", "gpt-4o"),
+            )
     
     tools = [check_syntax, find_common_issues, suggest_improvements]
     agent = create_react_agent(

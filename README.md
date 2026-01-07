@@ -15,9 +15,9 @@ Create an agent that:
 
 - ✅ FastAPI skeleton with `/explain` endpoint
 - ✅ React frontend with CopilotKit chat UI
-- ⚠️ ~~Groq LLM integration~~ → **Using OpenAI instead** (see note below)
+- ⚠️ ~~Groq LLM integration~~ → **Using OpenAI instead But added the GROQ_API_KEY and GROQ_MODEL support also** (see note below)
 
-> **Note on LLM Choice:** Groq was not used because the Groq free tier was quite slow for workflow. So i just used my own OpenAI (gpt-4o) for faster inferenceing. 
+> **Note on LLM Choice:** Groq was not used because the Groq free tier was quite slow for workflow. So i just used my own OpenAI (gpt-4o) for faster inferenceing.  But
 
 **What you implement:**
 
