@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body,
+html {
+  height: 100%;
+}
+
+/* Force override for CopilotKit shadows */
+.custom-copilot-sidebar,
+.custom-copilot-sidebar>div,
+.custom-copilot-sidebar section,
+.custom-copilot-sidebar aside,
+.copilotKitSidebar {
+  box-shadow: none !important;
+  border-left: 1px solid #e5e7eb !important;
+}
+
+/* Specific targeting for known CopilotKit internal classes if generic overrides fail */
+[class*="CopilotSidebar"],
+[class*="copilot-sidebar"] {
+  box-shadow: none !important;
+}
+
+/* Hide Help and Dev Console/Debug Buttons */
+.copilotKitDevConsole,
+.copilotKitDebugMenuTriggerButton,
+.copilotKitVersionInfo,
+.copilotKitPopup {
+  display: none !important;
+}

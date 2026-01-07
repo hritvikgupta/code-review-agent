@@ -1,0 +1,114 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# =====================
+# Node.js / Frontend
+# =====================
+node_modules/
+frontend/node_modules/
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Next.js
+.next/
+frontend/.next/
+/out/
+
+# Build output
+/build
+/dist
+
+# Lock files (regenerated on install)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+
+# =====================
+# Python / Backend
+# =====================
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+backend/.venv/
+
+# Distribution / packaging
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Pytest / Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# =====================
+# Environment Variables
+# =====================
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+*.env
+
+# =====================
+# IDE / Editor
+# =====================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# =====================
+# OS Generated
+# =====================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# =====================
+# Logs
+# =====================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# =====================
+# Misc
+# =====================
+*.pem
+/coverage
+.vercel
+*.tsbuildinfo
+
+# LangGraph
+.langgraph_api/
+.langgraph_api
